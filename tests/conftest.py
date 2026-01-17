@@ -5,7 +5,7 @@ import urls
 
 
 @pytest.fixture(scope = "function")
-def get_driver_function(request):
+def get_driver(request):
     driver = webdriver.Chrome()
     request.cls.driver = driver
     driver.get(urls.login_page_url)

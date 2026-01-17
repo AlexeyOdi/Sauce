@@ -1,6 +1,8 @@
 valid_user = "standard_user"
 valid_password = "secret_sauce"
 invalid_password = "ssecret_sauce"
-blocked_user = "locked_out_user"
+locked_out_user = "locked_out_user"
 glitch_user = "performance_glitch_user"
-
+login_error_text = "Epic sadface: Username and password do not match any user in this service"
+locked_out_error_text = "Epic sadface: Sorry, this user has been locked out."
+empty_username_input_error_text = "Epic sadface: Username is required"
