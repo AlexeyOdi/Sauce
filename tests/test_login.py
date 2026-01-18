@@ -7,6 +7,7 @@ from test_data import valid_user, valid_password, invalid_password, locked_out_u
 
 
 @pytest.mark.usefixtures("get_driver")
+@allure.title('Проверка страницы авторизации пользователя')
 class TestLoginPage:
 
     @allure.title('Проверка входа под корректным логином и паролем')
@@ -18,6 +19,7 @@ class TestLoginPage:
         test_lp.check_assert_inventory_page()
 
     @allure.title('Проверка входа с некорректным паролем')
+    @allure.description('Вводим неверный пароль при авторизации')
     def test_invalid_pass(self):
         test_lp = LoginPage(self.driver)
         test_lp.set_login(valid_user)
@@ -27,6 +29,7 @@ class TestLoginPage:
         test_lp.check_assert_login_error()
 
     @allure.title('Проверка входа заблокированного пользователя')
+    @allure.description('Вводим логин и пароль пользователя, который заблокирован')
     def test_locked_out_user(self):
         test_lp = LoginPage(self.driver)
         test_lp.set_login(locked_out_user)
